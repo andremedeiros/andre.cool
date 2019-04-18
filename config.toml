@@ -1,0 +1,16 @@
+baseURL = "https://andre.cool/"
+languageCode = "en-us"
+title = "André Medeiros"
+pygmentsCodeFences = true
+
+[permalinks]
+  posts = "/:year/:month/:slug/"
+
+[author]
+  name = "André Medeiros"
+
+[pygmentsOptions]
+  linenos = true
+
+[params]
+  githubRepo = "https://github.com/andremedeiros/andre.cool"

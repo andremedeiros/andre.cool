@@ -1,0 +1,15 @@
+{{ partial "header.html" . }}
+<article>
+  {{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
+  {{ range $paginator.Pages }}
+    <h1>
+      {{ if .IsNode }}
+      <a href="{{ .Permalink }}">{{ .Title}}</a>
+      {{ else }}
+      <a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} :: Draft {{end}}</a>
+      {{ end }}
+    </h1>
+    {{ .Summary }}
+  {{ end }}
+</article>
+{{ partial "footer.html" . }}
