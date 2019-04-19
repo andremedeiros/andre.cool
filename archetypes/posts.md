@@ -1,4 +1,5 @@
 ---
+author: "{{ .Site.Author.name }}"
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
