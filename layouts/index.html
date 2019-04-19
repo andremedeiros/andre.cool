@@ -9,6 +9,7 @@
       <a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} :: Draft {{end}}</a>
       {{ end }}
     </h1>
+    <p class="byline">{{ .Date.Format "Jan 2, 2006" }}</p>
     {{ .Summary }}
   {{ end }}
 </article>
