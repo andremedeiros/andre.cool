@@ -14,7 +14,7 @@
   {{ range $paginator.Pages }}
     <li>
       {{ if .IsNode }}
-      <a href="{{ .Permalink }}">{{ .Title}}</a>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
       {{ else }}
       <a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} :: Draft {{end}}</a>
       {{ end }}

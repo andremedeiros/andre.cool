@@ -5,6 +5,8 @@ title = "Hello, World!"
 pygmentsCodeFences = true
 pygmentsOptions = "style=manni,noclasses=true,linenos=sure"
 
+enableRobotsTXT = true
+
 [permalinks]
   posts = "/:year/:month/:slug/"
 
@@ -13,3 +15,7 @@ pygmentsOptions = "style=manni,noclasses=true,linenos=sure"
 
 [params]
   githubRepo = "https://github.com/andremedeiros/andre.cool"
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
