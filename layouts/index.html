@@ -1,16 +1,23 @@
 {{ partial "header.html" . }}
 <article>
+  <h1>{{ .Title }}</h1>
+
+  <p>
+    This is my little corner on the Internet, where I dump my thoughts on random subjects.
+  </p>
+
+  <h2>Recent Posts</h2>
+  <ul>
   {{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
   {{ range $paginator.Pages }}
-    <h1>
+    <li>
       {{ if .IsNode }}
       <a href="{{ .Permalink }}">{{ .Title}}</a>
       {{ else }}
       <a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} :: Draft {{end}}</a>
       {{ end }}
-    </h1>
-    <p class="byline">{{ .Date.Format "Jan 2, 2006" }}</p>
-    {{ .Summary }}
+    </li>
   {{ end }}
+  </ul>
 </article>
 {{ partial "footer.html" . }}
