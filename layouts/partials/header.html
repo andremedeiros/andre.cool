@@ -5,8 +5,10 @@
   <meta charset="utf-8">
   <title>{{ .Site.Title }} - {{ .Title  }}</title>
 
-  <link rel="stylesheet" href="/css/tufte.css">
-  <link rel="stylesheet" href="/css/site.css">
+  {{ $tufte := resources.Get "css/tufte.css" }}
+  {{ $override := resources.Get "css/site.css" }}
+  {{ $stylesheets := slice $tufte $override | resources.Concat "css/bundle.css" | resources.Minify }}
+  <link rel="stylesheet" href="{{ $stylesheets.Permalink }}">
 </head>
 <body>
   <header>
