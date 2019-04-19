@@ -2,9 +2,11 @@
 <article>
   <h1>{{ .Title }}</h1>
 
-  <p>
-    This is my little corner on the Internet, where I dump my thoughts on random subjects.
-  </p>
+  <section>
+  {{ with .Site.GetPage "pages/home" }}
+    {{ .Content }}
+  {{ end }}
+  </section>
 
   <h2>Recent Posts</h2>
   <ul>
@@ -16,6 +18,8 @@
       {{ else }}
       <a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} :: Draft {{end}}</a>
       {{ end }}
+      &mdash;
+      {{ .Date.Format "Jan 2, 2006" }}
     </li>
   {{ end }}
   </ul>
