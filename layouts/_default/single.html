@@ -1,10 +1,13 @@
 {{ partial "header.html" . }}
 <article>
   <h1>{{ .Title }}</h1>
+  <p class="byline">{{ .Date.Format "Jan 2, 2006" }}</p>
   {{ if .Params.toc }}
     {{ .TableOfContents }}
   {{ end }}
 
-  {{ .Content }}
+  <section>
+    {{ .Content }}
+  </section>
 </article>
 {{ partial "footer.html" . }}
