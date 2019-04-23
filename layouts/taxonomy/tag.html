@@ -1,0 +1,21 @@
+{{ partial "header.html" . }}
+<article>
+  <h1>Posts tagged "{{ .Title }}"</h1>
+
+  <section>
+    <ul>
+      {{ range .Data.Pages }}
+        <li>
+          {{ if .IsNode }}
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          {{ else }}
+          <a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} :: Draft {{end}}</a>
+          {{ end }}
+          &mdash;
+          {{ .Date.Format "Jan 2, 2006" }}
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+</article>
+{{ partial "footer.html" . }}

@@ -3,6 +3,8 @@ author: "André Medeiros"
 title: "Is This Thing On?"
 date: 2019-04-18T17:25:26-04:00
 comments: true
+tags:
+- meta
 ---
 
 It's about time I should have some sort of thought dumping ground of sorts. I've been plagued, for years with decision paralysis about what theme to use, colors, and just the tiniest details that don't really matter. After all, as long as there are words on the screen, the message more or less gets through, right?

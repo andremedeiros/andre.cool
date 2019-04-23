@@ -1,0 +1,28 @@
+{{ partial "header.html" . }}
+<article>
+  <h1>{{ .Title }}</h1>
+  <p class="byline">
+    {{ .Date.Format "Jan 2, 2006" }} &bull;
+
+    {{ $tags := slice }}
+    {{ with .Params.tags }}
+      {{ range . }}
+        {{ $href := print ("tags/" | absLangURL) (. | urlize) "/" }}
+        {{ $element := printf "<a href=%q>%s</a>" $href . }}
+        {{ $tags = $tags | append $element }}
+      {{ end }}
+    {{ end }}
+    {{ delimit $tags ", " ", and " }} &bull;
+
+    {{ .ReadingTime }} min. read
+  </p>
+
+  {{ if .Params.toc }}
+    {{ .TableOfContents }}
+  {{ end }}
+
+  <section>
+    {{ .Content }}
+  </section>
+</article>
+{{ partial "footer.html" . }}

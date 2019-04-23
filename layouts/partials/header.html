@@ -17,6 +17,18 @@
   {{ range .AlternativeOutputFormats }}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end }}
+
+  <link rel="index" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@superdealloc">
+  <meta name="twitter:creator" content="@superdealloc">
+  <meta name="twitter:domain" content="andre.cool">
+  {{ if .IsHome -}}
+  <meta name="twitter:title" content="{{ .Site.Title }}">
+  {{ else -}}
+  <meta name="twitter:title" content="{{ .Title }} &mdash; {{ .Site.Title }}">
+  {{ end }}
 </head>
 <body>
   <header>
