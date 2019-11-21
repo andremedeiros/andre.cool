@@ -1,16 +1,14 @@
 {{ partial "header.html" . }}
 <article>
-  <h1>{{ .Title }}</h1>
+  <h1>{{ .Site.Title }}</h1>
 
   <section>
-  {{ with .Site.GetPage "pages/home" }}
     {{ .Content }}
-  {{ end }}
   </section>
 
   <h2>Recent Posts</h2>
   <ul>
-  {{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
+  {{ $paginator := .Paginate (where site.RegularPages "Type" "posts") }}
   {{ range $paginator.Pages }}
     <li>
       {{ if .IsNode }}
